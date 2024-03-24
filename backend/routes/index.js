@@ -1,9 +1,9 @@
+const express=require("express")
+const app=express();
+const rootRouter=express.Router("./roures/index")
+app.use("/api/v1",rootRouter)
+const cors=require("cors")
+app.use(express.json());
+app.use(cors())
 
-const express = require("express");
-const userRouter = require("./user");
-
-const router = express.Router();
-
-router.use("/user", userRouter);
-
-module.exports = router;
+app.listen(3000);
